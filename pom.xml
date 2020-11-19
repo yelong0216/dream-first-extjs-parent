@@ -4,7 +4,7 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>com.github.yelong0216.dream.first</groupId>
 	<artifactId>dream-first-extjs-parent</artifactId>
-	<version>2.0.0</version>
+	<version>2.1.0</version>
 	<packaging>pom</packaging>
 	<description>dreamfirst-extjs的父依赖，方便管理依赖</description>
 	<url>https://github.com/yelong0216/dream-first-extjs-parent.git</url>
@@ -32,16 +32,21 @@
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<spring-cloud.version>Greenwich.M3</spring-cloud.version>
 
-		<dream-first.version>[2.0.0,2.1.0)</dream-first.version>
+		<dream-first.version>[2.1.0,2.2.0)</dream-first.version>
 		<dream-first-core.version>${dream-first.version}</dream-first-core.version>
 		<dream-first-plugin.version>${dream-first.version}</dream-first-plugin.version>
 
 		<dream-first-extjs.version>${dream-first.version}</dream-first-extjs.version>
 		<dream-first-extjs-plugin.version>${dream-first-extjs.version}</dream-first-extjs-plugin.version>
-		<dream-first-extjs-plugin-platform.version>${dream-first-extjs-plugin.version}</dream-first-extjs-plugin-platform.version>
+
+		<dream-first-extjs-plugin-dba.version>${dream-first-extjs-plugin.version}</dream-first-extjs-plugin-dba.version>
+		<dream-first-extjs-plugin-exception.version>${dream-first-extjs-plugin.version}</dream-first-extjs-plugin-exception.version>
 		<dream-first-extjs-plugin-index.version>${dream-first-extjs-plugin.version}</dream-first-extjs-plugin-index.version>
 		<dream-first-extjs-plugin-login.version>${dream-first-extjs-plugin.version}</dream-first-extjs-plugin-login.version>
 		<dream-first-extjs-plugin-manage.version>${dream-first-extjs-plugin.version}</dream-first-extjs-plugin-manage.version>
+		<dream-first-extjs-plugin-platform.version>${dream-first-extjs-plugin.version}</dream-first-extjs-plugin-platform.version>
+		<dream-first-extjs-plugin-resource.version>${dream-first-extjs-plugin.version}</dream-first-extjs-plugin-resource.version>
+		<dream-first-extjs-plugin-tools.version>${dream-first-extjs-plugin.version}</dream-first-extjs-plugin-tools.version>
 
 		<mysql.version>5.1.47</mysql.version>
 	</properties>
@@ -65,9 +70,15 @@
 			<!-- extjs plugin -->
 			<dependency>
 				<groupId>com.github.yelong0216.dream.first</groupId>
-				<artifactId>dream-first-extjs-plugin-platform</artifactId>
-				<version>${dream-first-extjs-plugin-platform.version}</version>
+				<artifactId>dream-first-extjs-plugin-dba</artifactId>
+				<version>${dream-first-extjs-plugin-dba.version}</version>
 			</dependency>
+			<dependency>
+				<groupId>com.github.yelong0216.dream.first</groupId>
+				<artifactId>dream-first-extjs-plugin-exception</artifactId>
+				<version>${dream-first-extjs-plugin-exception.version}</version>
+			</dependency>
+
 			<dependency>
 				<groupId>com.github.yelong0216.dream.first</groupId>
 				<artifactId>dream-first-extjs-plugin-index</artifactId>
@@ -82,6 +93,21 @@
 				<groupId>com.github.yelong0216.dream.first</groupId>
 				<artifactId>dream-first-extjs-plugin-manage</artifactId>
 				<version>${dream-first-extjs-plugin-manage.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>com.github.yelong0216.dream.first</groupId>
+				<artifactId>dream-first-extjs-plugin-platform</artifactId>
+				<version>${dream-first-extjs-plugin-platform.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>com.github.yelong0216.dream.first</groupId>
+				<artifactId>dream-first-extjs-plugin-resource</artifactId>
+				<version>${dream-first-extjs-plugin-resource.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>com.github.yelong0216.dream.first</groupId>
+				<artifactId>dream-first-extjs-plugin-tools</artifactId>
+				<version>${dream-first-extjs-plugin-tools.version}</version>
 			</dependency>
 			<!-- https://mvnrepository.com/artifact/mysql/mysql-connector-java -->
 			<dependency>
@@ -147,24 +173,14 @@
 					<resource>
 						<directory>src/main/java</directory>
 						<includes>
-							<include>**/*.properties</include>
-							<include>**/*.xml</include>
-							<include>**/*.tld</include>
-							<include>**/*.yml</include>
-							<include>**/*.ftl</include>
-							<include>**/*.factories</include>
+							<include>**/*.*</include>
 						</includes>
 						<filtering>false</filtering>
 					</resource>
 					<resource>
 						<directory>src/main/resources</directory>
 						<includes>
-							<include>**/*.properties</include>
-							<include>**/*.xml</include>
-							<include>**/*.tld</include>
-							<include>**/*.yml</include>
-							<include>**/*.ftl</include>
-							<include>**/*.factories</include>
+							<include>**/*.*</include>
 						</includes>
 						<filtering>false</filtering>
 					</resource>
